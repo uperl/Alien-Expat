@@ -1,4 +1,4 @@
-# Alien::Expat [![Build Status](https://secure.travis-ci.org/plicease/Alien-Expat.png)](http://travis-ci.org/plicease/Alien-Expat)
+# Alien::Expat [![Build Status](https://api.travis-ci.com/plicease/Alien-Expat.svg?branch=main)](https://travis-ci.com/github/plicease/Alien-Expat)
 
 Find or install the Expat stream-oriented XML parser
 
@@ -6,66 +6,76 @@ Find or install the Expat stream-oriented XML parser
 
 in your Makefile.PL:
 
-    use ExtUtils::MakeMaker;
-    use Alien::Base::Wrapper qw( Alien::Expat !export );
-    
-    WriteMakefile(
-      ...
-      CONFIGURE_REQUIRES => {
-        'Alien::Base::Wrapper' => 0,
-        'Alien::Expat'         => 0,
-      },
-      Alien::Base::Wrapper->mm_args,
-      ...
-    );
+```perl
+use ExtUtils::MakeMaker;
+use Alien::Base::Wrapper qw( Alien::Expat !export );
+
+WriteMakefile(
+  ...
+  CONFIGURE_REQUIRES => {
+    'Alien::Base::Wrapper' => 0,
+    'Alien::Expat'         => 0,
+  },
+  Alien::Base::Wrapper->mm_args,
+  ...
+);
+```
 
 or your Build.PL:
 
-    use Module::Build;
-    use Alien::Base::Wrapper qw( Alien::Expat !export );
-    
-    my $build = Module::Build->new(
-      ...
-      configure_requires => {
-        'Alien::Base::Wrapper' => 0,
-        'Alien::Expat'         => 0,
-      },
-      Alien::Base::Wrapper->mb_args,
-      ...
-    );
-    
-    $build->create_build_script;
+```perl
+use Module::Build;
+use Alien::Base::Wrapper qw( Alien::Expat !export );
+
+my $build = Module::Build->new(
+  ...
+  configure_requires => {
+    'Alien::Base::Wrapper' => 0,
+    'Alien::Expat'         => 0,
+  },
+  Alien::Base::Wrapper->mb_args,
+  ...
+);
+
+$build->create_build_script;
+```
 
 or your dist.ini:
 
-    [@Filter]
-    -bundle = @Basic
-    -remove = MakeMaker
-    
-    [Prereqs / ConfigureRequires]
-    Alien::Expat = 0
-    
-    [MakeMaker::Awesome]
-    header = use Alien::Base::Wrapper qw( Alien::Expat !export );
-    WriteMakefile_arg = Alien::Base::Wrapper->mm_args
+```perl
+[@Filter]
+-bundle = @Basic
+-remove = MakeMaker
+
+[Prereqs / ConfigureRequires]
+Alien::Expat = 0
+
+[MakeMaker::Awesome]
+header = use Alien::Base::Wrapper qw( Alien::Expat !export );
+WriteMakefile_arg = Alien::Base::Wrapper->mm_args
+```
 
 or [FFI::Platypus](https://metacpan.org/pod/FFI::Platypus):
 
-    use FFI::Platypus 1.00;
-    use Alien::Expat;
-    
-    my $ffi = FFI::Platypus->new(
-      api => 1,
-      lib => [ Alien::Expat->dynamic_libs ],
-    );
+```perl
+use FFI::Platypus 1.00;
+use Alien::Expat;
+
+my $ffi = FFI::Platypus->new(
+  api => 1,
+  lib => [ Alien::Expat->dynamic_libs ],
+);
+```
 
 or for xmlwf from your Perl script / module
 
-    use Alien::Expat;
-    use Env qw( @PATH );
-    
-    unshift @PATH, Alien::Expat->bin_dir;
-    system 'xmlwf', '-v';
+```perl
+use Alien::Expat;
+use Env qw( @PATH );
+
+unshift @PATH, Alien::Expat->bin_dir;
+system 'xmlwf', '-v';
+```
 
 # DESCRIPTION
 
