@@ -1,4 +1,4 @@
-# Alien::Expat ![linux](https://github.com/uperl/Alien-Expat/workflows/linux/badge.svg)
+# Alien::Expat ![linux](https://github.com/uperl/Alien-Expat/workflows/linux/badge.svg) ![macos](https://github.com/uperl/Alien-Expat/workflows/macos/badge.svg)
 
 Find or install the Expat stream-oriented XML parser
 
