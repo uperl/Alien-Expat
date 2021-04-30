@@ -1,4 +1,4 @@
-# Alien::Expat [![Build Status](https://api.travis-ci.com/plicease/Alien-Expat.svg?branch=main)](https://travis-ci.com/github/plicease/Alien-Expat)
+# Alien::Expat ![linux](https://github.com/uperl/Alien-Expat/workflows/linux/badge.svg)
 
 Find or install the Expat stream-oriented XML parser
 
