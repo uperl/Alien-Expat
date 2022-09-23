@@ -124,6 +124,8 @@ jobs:
       - name: Build + Test
         run: |
           cip script
+        env:
+          CIP_ENV: ALIEN_INSTALL_TYPE=${{ matrix.cip.install_type }} ALIEN_BUILD_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
 
       - name: CPAN log
         if: ${{ failure() }}
