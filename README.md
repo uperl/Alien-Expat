@@ -67,22 +67,11 @@ my $ffi = FFI::Platypus->new(
 );
 ```
 
-or for xmlwf from your Perl script / module
-
-```perl
-use Alien::Expat;
-use Env qw( @PATH );
-
-unshift @PATH, Alien::Expat->bin_dir;
-system 'xmlwf', '-v';
-```
-
 # DESCRIPTION
 
-This module can be used as a prereq for XS or FFI modules that need expat or the
-command-line tool that it comes from: xmlwf.  For more detail on how to use this
-module you can see the [Alien::Build](https://metacpan.org/pod/Alien::Build) user documentation at
-[Alien::Build::Manual::AlienUser](https://metacpan.org/pod/Alien::Build::Manual::AlienUser).
+This module can be used as a prereq for XS or FFI modules that need expat.
+For more detail on how to use this module you can see the [Alien::Build](https://metacpan.org/pod/Alien::Build)
+user documentation at [Alien::Build::Manual::AlienUser](https://metacpan.org/pod/Alien::Build::Manual::AlienUser).
 
 # SEE ALSO
 
